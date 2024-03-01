@@ -6,7 +6,7 @@ class PromoCodeController
 {
     public function __construct(
         private CodeValidator $codeValidator,
-        private AbstractDiscountCalculator $discountApplicator
+        private MultiplierDiscountCalculator $discountApplicator
     ) {
     }
 

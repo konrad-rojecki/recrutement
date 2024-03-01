@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-class DiscountDTO
+final class DiscountDTO
 {
     public function __construct(
-        public float $howMuchDiscount
+        public ?float $howMuchDiscount = null
     ) {
     }
 

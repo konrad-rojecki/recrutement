@@ -2,12 +2,16 @@
 
 namespace App\Controller;
 
-class MultiplierDiscountCalculator extends AbstractDiscountCalculator
+final class MultiplierDiscountCalculator extends AbstractDiscountCalculator
 {
     public function calculate(string $code): DiscountDTO
     {
-        $discount = $this->getDiscountFromDatabase($code) * 100;
-        $discount = new DiscountDTO((float) $discount);
+        $howMuchDiscount = $this->getDiscountFromDatabase($code) * 100;
+        if (empty($discount)) {
+            throw new \Exception('discount is empty');
+        }
+        $discount = new DiscountDTO();
+        $discount->setHowMuchDiscount($howMuchDiscount);
 
         return $discount;
     }
