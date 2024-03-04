@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Promotion;
 
 class CodeValidator
 {
@@ -24,6 +24,7 @@ class CodeValidator
 
     private function cartIsNotEmpty(): bool
     {
+        //here some simple logic or call to another service
         return true;
     }
 }
